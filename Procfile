@@ -1,1 +1,1 @@
-web: gunicorn nshabri.wsgi --log-file -
+web: gunicorn newstore.wsgi --log-file -
