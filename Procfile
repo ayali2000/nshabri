@@ -1,1 +1,1 @@
-web: gunicorn nshabri.wsgi
+web: gunicorn newstore.wsgi
