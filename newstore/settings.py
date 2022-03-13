@@ -92,8 +92,8 @@ DATABASES = {
         'NAME':env("NAME"),
         'USER':env("USER"),
         'PASSWORD':env("PASSWORD"),
-        'HOST': env("HOST"),
-        'PORT': env("PORT"),
+        'HOST':env("HOST"),
+        'PORT':env("PORT"),
     }
 }
 
