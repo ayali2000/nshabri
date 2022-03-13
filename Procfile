@@ -1,1 +1,1 @@
-web: gunicorn newstore.wsgi --log
+web: gunicorn newstore.wsgi --log-file -
