@@ -26,11 +26,11 @@ environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
 SECRET_KEY=env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ABC=True
 
-ALLOWED_HOSTS=['127.0.0.1','*',"https://shabri.herokuapp.com/"]
+ALLOWED_HOSTS=['127.0.0.1','*',"shabri.herokuapp.com"]
 
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.runserver_nostatic','django.contrib.staticfiles',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -128,6 +129,8 @@ USE_I18N = True
 
 USE_TZ = False
 
+WHITENOISE_USE_FINDERS = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -140,6 +143,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
