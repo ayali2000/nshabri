@@ -26,7 +26,7 @@ environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
 SECRET_KEY=env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ABC=True
 
@@ -51,7 +51,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.runserver_nostatic','django.contrib.staticfiles',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -89,12 +88,12 @@ WSGI_APPLICATION = 'newstore.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':env("ENGINE"),
-        'NAME':env("NAME"),
-        'USER':env("USER"),
-        'PASSWORD':env("PASSWORD"),
-        'HOST':env("HOST"),
-        'PORT':env("PORT"),
+        'ENGINE': env("ENGINE"),
+        'NAME': env("NAME"),
+        'USER': env("USER"),
+        'PASSWORD': env("PASSWORD"),
+        'HOST': env("HOST"),
+        'PORT': env("PORT"),
     }
 }
 
