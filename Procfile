@@ -1,1 +1,1 @@
-web: gunicorn newstore.wsgi.application --log-file
+web: gunicorn newstore.wsgi.application --logfile
